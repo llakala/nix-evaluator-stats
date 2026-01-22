@@ -11,12 +11,13 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/node": "^25.0.10",
     "@typescript-eslint/eslint-plugin": "^8.53.1",
     "@typescript-eslint/parser": "^8.53.1",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "lucide-solid": "^0.562.0",
-    "prettier": "^3.8.0",
+    "prettier": "^3.8.1",
     "solid-js": "^1.9.10",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.53.1",
