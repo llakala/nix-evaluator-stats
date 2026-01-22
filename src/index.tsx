@@ -192,7 +192,13 @@ function App() {
       </header>
 
       <main class="main">
-        <Suspense fallback={<div class="loading">Loading analysis...</div>}>
+        <Show when={isLoading()}>
+          <div class="loading">
+            <div class="spinner"></div>
+            <span>Loading saved data...</span>
+          </div>
+        </Show>
+        <Show when={!isLoading()}>
           <Show when={view() === 'analysis'}>
             <Show when={!currentStats()}>
               <FileUpload
@@ -238,7 +244,7 @@ function App() {
               onDelete={deleteSnapshot}
             />
           </Show>
-        </Suspense>
+        </Show>
       </main>
 
       <footer class="footer">
