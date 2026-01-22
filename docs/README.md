@@ -1,10 +1,8 @@
-# nix-evaluator-stats
-
 <!-- markdownlint-disable MD033 -->
 
 <div align="center">
-
-<a alt="CI Status" href="https://github.com/NotAShelf/nix-evaluator-stats">
+  <h1 id="header">nix-evaluator-stats</h1>
+  <a alt="CI Status" href="https://github.com/NotAShelf/nix-evaluator-stats">
     <img
       src="https://github.com/NotAShelf/nix-evaluator-stats/actions/workflows/check.yml/badge.svg"
       alt="Lints & Formatting"
@@ -37,14 +35,22 @@ and provide the JSON export (or a file) to render the statistics. The number of
 rendered fields might differ based on your Nix version or implementation (Lix,
 Snix, etc.) The classic usage looks like this:
 
+<!-- markdownlint-disable MD013 -->
+
 ```bash
 # Invoke a Nix command with NIX_SHOW_STATS=1
 $ NIX_SHOW_STATS=1 nix eval nixpkgs#hello -- --option eval-cache false # disable eval-cache for accuracy
+
+# Or write to a file directly
+$ NIX_SHOW_STATS_PATH=stats.json nix eval nixpkgs#hello -- --option eval-cache false
 ```
 
+<!-- markdownlint-enable MD013 -->
+
 1. Create the JSON export
-2. Copy it
-3. Paste it in the input field that appears the first time you visit the site
+2. Copy it if printed to stdout
+3. Paste or upload it in the input field that appears the first time you visit
+   the site
 
 Once you hit "Load", the JSON will be parsed and you'll be looking at a dash
 board of your export. By using the snapshot feature, i.e., saving a particular
@@ -54,6 +60,15 @@ analysis you may compare two _named_ analyses at a time.
 > `nix-evaluator-stats` was created in a very short duration, and there might be
 > UI bugs or areas where UI polish is very clearly missing. Please crate an
 > issue if the generated graph or the site UI looks off. Thanks :)
+
+### Snapshots
+
+Snapshots are an "experimental" (just means they're new and unpolished) feature
+that lets you save an analysis in your browser storage with a name to be used
+later on in the comparison view. At least two **named** analyses (i.e.,
+snapshots) are required for an analysis.
+
+You can save an analysis as a snapshot from the save button on the bottom right.
 
 ## Hacking
 
